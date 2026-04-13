@@ -10,10 +10,10 @@ export const hero = {
 export const executiveSummary = {
   title: "Executive Summary",
   stats: [
-    { value: "$4.4B", label: "Travel eSIM market by 2030" },
-    { value: "280M", label: "Global users by 2030" },
-    { value: "$3–$7", label: "ARPAX uplift per passenger" },
-    { value: "3–7%", label: "Attach rate within 12 months" },
+    { value: "$4.4B", label: "Global travel eSIM market by 2030" },
+    { value: "$18.07", label: "ARPU per 5GB bundle (ex VAT)" },
+    { value: "$8.55M", label: "5-year revenue upside (best case)" },
+    { value: "12%", label: "Peak attach rate by Yr 5" },
   ],
   touchpoints: {
     title: "Leverage your full airline footprint",
@@ -98,10 +98,10 @@ export const whyEsim = {
 export const businessCase = {
   title: "Business Case",
   parameters: [
-    { label: "Route scope", value: "Top 20 routes · 41% outbound international pax" },
-    { label: "Revenue share", value: "10% of revenue to airline · 50/50 net share" },
-    { label: "Package size", value: "5 GB outbound packages" },
-    { label: "Passenger growth", value: "5% escalation per year" },
+    { label: "Bundle", value: "5 GB · $18.07 ARPU (ex VAT)" },
+    { label: "Margin", value: "30% gross margin on subscriber revenue" },
+    { label: "Airline share", value: "10% of revenue to airline" },
+    { label: "Target market", value: "1.0M pax in 2026 · +5% p.a." },
   ],
   attachRates: {
     headers: ["Year", "Worst", "Base", "Best"],
@@ -116,11 +116,11 @@ export const businessCase = {
   uptake: {
     headers: ["Year", "Worst", "Base", "Best"],
     rows: [
-      ["Yr 1", "70,820", "106,230", "177,050"],
-      ["Yr 2", "111,542", "185,903", "260,264"],
-      ["Yr 3", "136,638", "234,237", "312,316"],
-      ["Yr 4", "163,966", "286,941", "409,915"],
-      ["Yr 5", "193,685", "344,329", "516,493"],
+      ["Yr 1", "20,000", "30,000", "50,000"],
+      ["Yr 2", "31,500", "52,500", "73,500"],
+      ["Yr 3", "38,588", "66,150", "88,200"],
+      ["Yr 4", "46,305", "81,034", "115,763"],
+      ["Yr 5", "54,698", "97,241", "145,861"],
     ],
   },
 };
@@ -128,27 +128,29 @@ export const businessCase = {
 export const financials = {
   title: "Financial Projections",
   headline: {
-    revenue: "Up to $30M total revenue over 5 years",
-    net: "Up to $4.16M net income over 5 years",
+    revenue: "Up to $8.55M subscriber revenue over 5 years",
+    net: "Up to $1.71M MVNE net over 5 years",
   },
   revenue: {
     headers: ["Year", "Worst ($M)", "Base ($M)", "Best ($M)"],
     rows: [
-      ["Yr 1", "1.3", "1.9", "3.2"],
-      ["Yr 2", "2.0", "3.4", "4.7"],
-      ["Yr 3", "2.5", "4.2", "5.6"],
-      ["Yr 4", "3.0", "5.2", "7.4"],
-      ["Yr 5", "3.5", "6.2", "9.3"],
+      ["Yr 1", "0.36", "0.54", "0.90"],
+      ["Yr 2", "0.57", "0.95", "1.33"],
+      ["Yr 3", "0.70", "1.20", "1.59"],
+      ["Yr 4", "0.84", "1.46", "2.09"],
+      ["Yr 5", "0.99", "1.76", "2.64"],
+      ["5-yr", "3.45", "5.91", "8.55"],
     ],
   },
   netIncome: {
     headers: ["Year", "Worst ($M)", "Base ($M)", "Best ($M)"],
     rows: [
-      ["Yr 1", "0.20", "0.27", "0.44"],
-      ["Yr 2", "0.30", "0.46", "0.65"],
-      ["Yr 3", "0.35", "0.59", "0.78"],
-      ["Yr 4", "0.41", "0.72", "1.00"],
-      ["Yr 5", "0.48", "0.86", "1.29"],
+      ["Yr 1", "0.07", "0.11", "0.18"],
+      ["Yr 2", "0.11", "0.19", "0.27"],
+      ["Yr 3", "0.14", "0.24", "0.32"],
+      ["Yr 4", "0.17", "0.29", "0.42"],
+      ["Yr 5", "0.20", "0.35", "0.53"],
+      ["5-yr", "0.69", "1.18", "1.71"],
     ],
   },
 };
