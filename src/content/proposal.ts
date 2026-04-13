@@ -190,7 +190,7 @@ export const otherOpportunities = {
       href: "https://www.cxg.co.za",
     },
     {
-      title: "McAfee",
+      title: "Bitdefender",
       body: "Connected security and identity protection — bundled with the eSIM or sold standalone.",
       href: "https://www.digitalresilience.co.za",
     },
