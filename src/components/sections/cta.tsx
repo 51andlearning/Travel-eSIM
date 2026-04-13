@@ -42,12 +42,12 @@ export default function Cta() {
             aria-label="Open this site on another device — QR code"
             className="group flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.04] p-3 pr-4 transition hover:border-white/30 hover:bg-white/[0.08]"
           >
-            <span className="inline-flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
+            <span className="inline-flex h-[400px] w-[400px] shrink-0 items-center justify-center rounded-2xl bg-white p-4">
               <Image
                 src="/images/qr-site.svg"
                 alt="QR code linking to dsg-travel-esim.vercel.app"
-                width={72}
-                height={72}
+                width={360}
+                height={360}
                 className="h-full w-full"
               />
             </span>
