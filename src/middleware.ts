@@ -19,13 +19,18 @@ export function middleware(req: NextRequest) {
   const header = req.headers.get("authorization");
 
   if (header?.startsWith("Basic ")) {
-    const decoded = Buffer.from(header.slice(6), "base64").toString("utf8");
-    const idx = decoded.indexOf(":");
-    const user = idx >= 0 ? decoded.slice(0, idx) : decoded;
-    const pass = idx >= 0 ? decoded.slice(idx + 1) : "";
+    try {
+      // atob is available in the Edge runtime; Buffer is not.
+      const decoded = atob(header.slice(6));
+      const idx = decoded.indexOf(":");
+      const user = idx >= 0 ? decoded.slice(0, idx) : decoded;
+      const pass = idx >= 0 ? decoded.slice(idx + 1) : "";
 
-    if (user === expectedUsername && pass === expectedPassword) {
-      return NextResponse.next();
+      if (user === expectedUsername && pass === expectedPassword) {
+        return NextResponse.next();
+      }
+    } catch {
+      // malformed header — fall through to 401
     }
   }
 
