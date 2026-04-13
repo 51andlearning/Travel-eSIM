@@ -52,13 +52,11 @@ export default function SiteHeader() {
             );
           })}
         </nav>
-        <div className="hidden md:inline-flex">
-          <ContactDialog
-            label="Get in touch"
-            showIcon={false}
-            className="rounded-full bg-[#0369A1] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#075985]"
-          />
-        </div>
+        <ContactDialog
+          label="Get in touch"
+          showIcon={false}
+          className="inline-flex items-center rounded-full bg-[#0369A1] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#075985]"
+        />
       </div>
     </header>
   );
