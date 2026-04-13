@@ -207,7 +207,7 @@ export const cta = {
   subtitle:
     "Next steps: validate assumptions, agree on commercial model, scope MVP integration with your booking and loyalty systems.",
   primary: { label: "Request a working session", href: "mailto:hello@example.com" },
-  secondary: { label: "Download the deck", href: "#" },
+  secondary: { label: "Download the deck", href: "/downloads/Travel-eSIM-Deck.pdf" },
 };
 
 export const footer = {
