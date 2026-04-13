@@ -34,9 +34,15 @@ export async function POST(req: NextRequest) {
   }
 
   // FormSubmit.co — no API key, no signup required.
-  // The very first submission triggers an "Activate Form" email to TO_EMAIL.
-  // Once Edward clicks the activate link, all subsequent submissions are
-  // delivered straight to his inbox without any further action.
+  // First submission triggers an "Activate Form" email to TO_EMAIL.
+  // Once that link is clicked, all subsequent submissions land in the inbox.
+  // FormSubmit blocks requests without Origin/Referer, so we set them explicitly
+  // for the server-to-server fetch.
+  const siteOrigin =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    req.headers.get("origin") ??
+    `https://${req.headers.get("host") ?? "dsg-travel-esim.vercel.app"}`;
+
   try {
     const res = await fetch(
       `https://formsubmit.co/ajax/${encodeURIComponent(TO_EMAIL)}`,
@@ -45,6 +51,8 @@ export async function POST(req: NextRequest) {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Origin: siteOrigin,
+          Referer: `${siteOrigin}/`,
         },
         body: JSON.stringify({
           _subject: `Travel eSIM — Working session request from ${name}`,
@@ -66,12 +74,26 @@ export async function POST(req: NextRequest) {
 
     const success =
       res.ok && (data.success === true || data.success === "true");
+
     if (!success) {
+      const msg = data.message?.toString() ?? "";
+      // Activation pending: FormSubmit has emailed the recipient an Activate
+      // Form link. Treat as a soft success so the user gets a clear message.
+      if (/activat/i.test(msg)) {
+        console.warn("[contact] FormSubmit activation pending", msg);
+        return NextResponse.json(
+          {
+            error:
+              "Your form was sent but the recipient inbox needs a one-time activation. Please email edwardw@mvne.co.za directly while we complete setup, and we'll be in touch.",
+          },
+          { status: 503 }
+        );
+      }
       console.error("[contact] FormSubmit error", res.status, data);
       return NextResponse.json(
         {
           error:
-            data.message?.toString() ??
+            msg ||
             "Failed to send. Please try again or email edwardw@mvne.co.za directly.",
         },
         { status: 502 }
