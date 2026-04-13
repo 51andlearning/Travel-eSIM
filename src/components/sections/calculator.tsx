@@ -152,7 +152,7 @@ export default function Calculator() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1 lg:grid-rows-2">
               <div className="rounded-2xl bg-[#0F172A] p-8 text-white">
                 <div className="text-xs font-medium uppercase tracking-[0.2em] text-[#38bdf8]">
-                  Total subscriber revenue
+                  Total subscriber annual revenue
                 </div>
                 <div className="mt-3 text-4xl font-semibold tracking-tight tabular-nums md:text-5xl">
                   {formatUSD(revenue)}
