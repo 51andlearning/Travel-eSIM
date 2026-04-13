@@ -99,7 +99,7 @@ export const businessCase = {
   title: "Business Case",
   parameters: [
     { label: "Bundle", value: "5 GB · $18.07 ARPU (ex VAT)" },
-    { label: "Airline share", value: "10% of revenue to airline" },
+    { label: "Airline share", value: "over 8% of revenue to airline" },
     { label: "Target market", value: "1.0M pax in 2026 · +5% p.a." },
   ],
   attachRates: {
@@ -128,7 +128,7 @@ export const financials = {
   title: "Financial Projections",
   headline: {
     revenue: "Up to $8.55M subscriber revenue over 5 years",
-    net: "Up to $1.71M Airline net over 5 years",
+    net: "Up to $0.68M Airline net over 5 years",
   },
   revenue: {
     headers: ["Year", "Worst ($M)", "Base ($M)", "Best ($M)"],
@@ -144,12 +144,12 @@ export const financials = {
   netIncome: {
     headers: ["Year", "Worst ($M)", "Base ($M)", "Best ($M)"],
     rows: [
-      ["Yr 1", "0.07", "0.11", "0.18"],
-      ["Yr 2", "0.11", "0.19", "0.27"],
-      ["Yr 3", "0.14", "0.24", "0.32"],
-      ["Yr 4", "0.17", "0.29", "0.42"],
-      ["Yr 5", "0.20", "0.35", "0.53"],
-      ["5-yr", "0.69", "1.18", "1.71"],
+      ["Yr 1", "0.03", "0.04", "0.07"],
+      ["Yr 2", "0.05", "0.08", "0.11"],
+      ["Yr 3", "0.06", "0.10", "0.13"],
+      ["Yr 4", "0.07", "0.12", "0.17"],
+      ["Yr 5", "0.08", "0.14", "0.21"],
+      ["5-yr", "0.28", "0.47", "0.68"],
     ],
   },
 };

@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 const ARPU = 18.07; // $ per 5GB bundle (ex VAT)
-const AIRLINE_SHARE = 0.10; // 10% of subscriber revenue
+const AIRLINE_SHARE = 0.08; // 8% of subscriber revenue
 
 function formatUSD(n: number) {
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(2)}M`;
