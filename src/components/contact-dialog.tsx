@@ -234,9 +234,39 @@ export default function ContactDialog({ label }: { label: string }) {
             </div>
 
             {status === "error" && error ? (
-              <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-700">
-                {error}
-              </p>
+              <div className="space-y-2 rounded-lg bg-red-50 px-3 py-3 text-xs text-red-700">
+                <p>{error}</p>
+                <a
+                  href={`mailto:edwardw@mvne.co.za?subject=${encodeURIComponent(
+                    `Travel eSIM — Working session request from ${fields.name || "(name)"}`
+                  )}&body=${encodeURIComponent(
+                    [
+                      `Name: ${fields.name}`,
+                      `Company: ${fields.company}`,
+                      `Position: ${fields.position}`,
+                      `Email: ${fields.email}`,
+                      `Mobile: ${fields.phone}`,
+                      "",
+                      "Sent from the Travel eSIM proposal site.",
+                    ].join("\n")
+                  )}`}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3.5 py-1.5 font-medium text-white transition hover:bg-red-700"
+                >
+                  Send via your email app instead
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-3 w-3"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
             ) : null}
 
             <div className="flex justify-end gap-2 pt-2">
