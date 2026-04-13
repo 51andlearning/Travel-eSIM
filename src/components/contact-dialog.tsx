@@ -282,24 +282,56 @@ export default function ContactDialog({
               </div>
             ) : null}
 
-            <div className="flex justify-end gap-2 pt-2">
-              <DialogClose
-                render={
-                  <button
-                    type="button"
-                    className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-[#0F172A] transition hover:bg-slate-50"
-                  >
-                    Cancel
-                  </button>
-                }
-              />
-              <button
-                type="submit"
-                disabled={status === "submitting"}
-                className="inline-flex items-center gap-2 rounded-full bg-[#0369A1] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#075985] disabled:cursor-not-allowed disabled:opacity-60"
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+              <a
+                href={`mailto:edwardw@mvne.co.za?subject=${encodeURIComponent(
+                  `Travel eSIM — Working session request from ${fields.name || "(name)"}`
+                )}&body=${encodeURIComponent(
+                  [
+                    `Name: ${fields.name}`,
+                    `Company: ${fields.company}`,
+                    `Position: ${fields.position}`,
+                    `Email: ${fields.email}`,
+                    `Mobile: ${fields.phone}`,
+                    "",
+                    "Sent from the Travel eSIM proposal site.",
+                  ].join("\n")
+                )}`}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 underline-offset-4 transition hover:text-[#0369A1] hover:underline"
               >
-                {status === "submitting" ? "Sending…" : "Send request"}
-              </button>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-3.5 w-3.5"
+                >
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Or send via your email app
+              </a>
+              <div className="flex justify-end gap-2">
+                <DialogClose
+                  render={
+                    <button
+                      type="button"
+                      className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-[#0F172A] transition hover:bg-slate-50"
+                    >
+                      Cancel
+                    </button>
+                  }
+                />
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0369A1] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#075985] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {status === "submitting" ? "Sending…" : "Send request"}
+                </button>
+              </div>
             </div>
           </form>
         )}
