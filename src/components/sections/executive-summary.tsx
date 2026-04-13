@@ -34,7 +34,7 @@ export default function ExecutiveSummary() {
           <span className="text-[#38bdf8]">$4.4B opportunity</span> hiding inside your existing passenger journey.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-          A your-branded, itinerary-aware travel eSIM integrated across every touchpoint — with loyalty earn and burn.
+          A branded, itinerary-aware travel eSIM integrated across every touchpoint — with loyalty earn and burn.
         </p>
 
         <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4">

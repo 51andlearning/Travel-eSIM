@@ -2,7 +2,7 @@ export const hero = {
   eyebrow: "Direct Marketing Proposal",
   title: "Travel eSIM Opportunity",
   subtitle:
-    "A your-branded, itinerary-aware travel eSIM integrated across the entire passenger journey — with loyalty earn and burn.",
+    "A branded, itinerary-aware travel eSIM integrated across the entire passenger journey — with loyalty earn and burn.",
   primaryCta: { label: "See the business case", href: "#business-case" },
   secondaryCta: { label: "Executive summary", href: "#executive-summary" },
 };
