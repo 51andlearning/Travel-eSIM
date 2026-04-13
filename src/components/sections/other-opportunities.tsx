@@ -19,9 +19,12 @@ export default function OtherOpportunities() {
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {otherOpportunities.items.map((item) => (
-            <div
+            <a
               key={item.title}
-              className="group rounded-2xl border border-slate-200 bg-[#F8FAFC] p-7 transition hover:-translate-y-0.5 hover:border-[#0369A1]/30 hover:bg-white hover:shadow-[0_14px_40px_-20px_rgba(3,105,161,0.3)]"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col rounded-2xl border border-slate-200 bg-[#F8FAFC] p-7 transition hover:-translate-y-0.5 hover:border-[#0369A1]/30 hover:bg-white hover:shadow-[0_14px_40px_-20px_rgba(3,105,161,0.3)]"
             >
               <div className="mb-4 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-[#0369A1]">
                 <span className="h-px w-6 bg-[#0369A1]" />
@@ -48,7 +51,7 @@ export default function OtherOpportunities() {
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

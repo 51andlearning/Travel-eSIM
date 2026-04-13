@@ -159,24 +159,34 @@ export const otherOpportunities = {
   subtitle: "Beyond eSIM — adjacent revenue and experience plays that share the same distribution.",
   items: [
     {
+      title: "MVNO",
+      body: "Add connectivity to your proposition to give your customers a completely unique value proposition and generate additional income for your business.",
+      href: "https://www.mvne.co.za",
+    },
+    {
       title: "Digital Mobile for SA-bound Pax",
       body: "Inbound passenger connectivity bundles — a mirror of the outbound eSIM play.",
+      href: "https://www.mvne.co.za",
     },
     {
       title: "PersAIc",
       body: "Targeted personas with AI — segmentation and personalisation across the journey.",
+      href: "https://www.broadbrand.co.za",
     },
     {
       title: "CXG",
       body: "Digital experience and contact centre support integrated into your existing CX stack.",
+      href: "https://www.cxg.co.za",
     },
     {
       title: "McAfee",
       body: "Connected security and identity protection — bundled with the eSIM or sold standalone.",
+      href: "https://www.digitalresiliance.co.za",
     },
     {
       title: "Xanite",
       body: "Customer value management — retention, upsell, and churn defence.",
+      href: "https://www.broadbrand.co.za",
     },
   ],
 };
