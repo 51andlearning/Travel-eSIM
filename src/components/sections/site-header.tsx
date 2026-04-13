@@ -3,6 +3,7 @@ const NAV = [
   { label: "Proposition", href: "#proposition" },
   { label: "Business Case", href: "#business-case" },
   { label: "Financials", href: "#financials" },
+  { label: "Calculator", href: "#calculator" },
   { label: "Next Steps", href: "#next-steps" },
 ];
 
