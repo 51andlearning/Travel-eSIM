@@ -14,15 +14,15 @@ function Table({
   rows: string[][];
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white">
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <table className="w-full text-left text-sm">
-        <thead className="bg-neutral-50">
+        <thead className="bg-[#F8FAFC]">
           <tr>
             {headers.map((h, i) => (
               <th
                 key={h}
                 className={
-                  "px-4 py-3 font-medium text-neutral-700 " +
+                  "px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-500 " +
                   (i === 0 ? "" : "text-right")
                 }
               >
@@ -33,15 +33,15 @@ function Table({
         </thead>
         <tbody>
           {rows.map((r) => (
-            <tr key={r[0]} className="border-t border-neutral-100">
+            <tr key={r[0]} className="border-t border-slate-100">
               {r.map((cell, i) => (
                 <td
                   key={i}
                   className={
-                    "px-4 py-3 " +
+                    "px-5 py-3 " +
                     (i === 0
-                      ? "font-medium text-neutral-900"
-                      : "text-right tabular-nums text-neutral-700")
+                      ? "font-medium text-[#0F172A]"
+                      : "text-right tabular-nums text-slate-700")
                   }
                 >
                   {cell}
@@ -57,28 +57,31 @@ function Table({
 
 export default function BusinessCase() {
   return (
-    <section id="business-case" className="bg-[#FCF6F5] py-24 md:py-32">
+    <section id="business-case" className="bg-[#F8FAFC] py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="flex items-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-[#990011]" />
-          <p className="text-xs uppercase tracking-[0.24em] text-[#990011]">
-            05 · Business Case
+        <div className="flex items-center gap-2">
+          <span className="inline-block h-1.5 w-6 rounded-full bg-[#0369A1]" />
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#0369A1]">
+            Business Case
           </p>
         </div>
-        <h2 className="mt-5 font-serif text-4xl font-semibold text-neutral-900 md:text-5xl">
+        <h2 className="mt-5 text-4xl font-semibold tracking-tight text-[#0F172A] md:text-5xl">
           {businessCase.title}
         </h2>
+        <p className="mt-5 max-w-2xl text-lg text-slate-600">
+          Model parameters and passenger-attach scenarios used in the financial projections.
+        </p>
 
         <div className="mt-14 grid gap-4 md:grid-cols-4">
           {businessCase.parameters.map((p) => (
             <div
               key={p.label}
-              className="rounded-xl border border-neutral-200 bg-white p-5"
+              className="rounded-2xl border border-slate-200 bg-white p-5"
             >
-              <div className="text-xs uppercase tracking-wider text-neutral-500">
+              <div className="text-xs font-medium uppercase tracking-wider text-slate-500">
                 {p.label}
               </div>
-              <div className="mt-2 font-serif text-base font-medium text-neutral-900">
+              <div className="mt-2 text-base font-semibold text-[#0F172A]">
                 {p.value}
               </div>
             </div>
