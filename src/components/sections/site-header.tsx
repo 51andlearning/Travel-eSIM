@@ -15,24 +15,24 @@ export default function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
         <a href="/" className="flex items-center gap-3 text-[#0F172A]">
           <Image
-            src="/images/mvne-logo.svg"
+            src="/images/mvne-logo.png"
             alt="MVNE"
-            width={110}
-            height={32}
+            width={600}
+            height={236}
             priority
-            className="h-8 w-auto"
+            className="h-9 w-auto"
           />
           <span
             aria-hidden
             className="hidden h-8 w-px bg-slate-200 sm:block"
           />
           <Image
-            src="/images/dsg-proud-member.svg"
+            src="/images/dsg-proud-member.png"
             alt="Proud member of DSG"
-            width={110}
-            height={32}
+            width={964}
+            height={620}
             priority
-            className="hidden h-8 w-auto sm:block"
+            className="hidden h-9 w-auto sm:block"
           />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
