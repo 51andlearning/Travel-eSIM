@@ -6,21 +6,21 @@ export default function ExecutiveSummary() {
       id="executive-summary"
       className="relative overflow-hidden bg-[#0F172A] py-24 text-white md:py-32"
     >
-      {/* Background image: aircraft taking off */}
+      {/* Background image: aircraft taking off — full opacity for clarity */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/images/hero-aircraft.jpg)" }}
       />
-      {/* Dark navy gradient overlay for legibility */}
+      {/* Light navy gradient — transparent at top, darker at bottom where text/stats sit */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/70 via-[#0F172A]/85 to-[#0F172A]"
+        className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/20 via-[#0F172A]/55 to-[#0F172A]/90"
       />
-      {/* Brand colour glow */}
+      {/* Subtle brand glow only at the edges to preserve the sky */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.7] [background-image:radial-gradient(circle_at_15%_20%,#38bdf8_0,transparent_45%),radial-gradient(circle_at_85%_80%,#0369A1_0,transparent_45%)]"
+        className="absolute inset-0 opacity-[0.22] [background-image:radial-gradient(circle_at_15%_85%,#38bdf8_0,transparent_40%),radial-gradient(circle_at_85%_95%,#0369A1_0,transparent_40%)]"
       />
       <div className="relative mx-auto max-w-6xl px-6 md:px-10">
         <div className="flex items-center gap-2">
