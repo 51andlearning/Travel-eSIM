@@ -40,6 +40,8 @@ Manage via **Vercel → Project → Settings → Environment Variables**. Never 
 | `NEXT_PUBLIC_SITE_URL` | Production, Preview | Canonical site URL |
 | `SITE_USERNAME` | Production, Preview | Basic-auth username (default: `travel`) |
 | `SITE_PASSWORD` | Production, Preview | Basic-auth password — **site is open if unset** |
+| `RESEND_API_KEY` | Production, Preview | Resend API key used by the contact form — **form returns 500 if unset** |
+| `CONTACT_FROM_EMAIL` | Production, Preview | Optional. Default: `Travel eSIM <onboarding@resend.dev>`. Once a custom domain is verified in Resend, e.g. `Travel eSIM <no-reply@mvne.co.za>` |
 
 Add more as features land. Mirror them in a local `.env.local` (gitignored) for development.
 
@@ -51,6 +53,19 @@ The site ships with HTTP Basic Auth via `src/middleware.ts`. To lock it:
 4. To remove protection, delete `SITE_PASSWORD` and redeploy
 
 For team-scale access control (SSO, audit logs) consider Vercel's built-in Deployment Protection on the Pro plan instead.
+
+## Contact form (Resend)
+The "Request a working session" CTA opens a modal form that POSTs to `/api/contact` and emails `edwardw@mvne.co.za` via [Resend](https://resend.com).
+
+1. Sign up at https://resend.com (free tier: 100 emails/day, 3000/month)
+2. Create an API key: **API Keys → Create API Key**
+3. In Vercel → Project → Settings → Environment Variables add:
+   - `RESEND_API_KEY` (required) — the key from step 2
+   - `CONTACT_FROM_EMAIL` (optional) — see table above
+4. Redeploy
+5. **Test the form** on the live site — email should arrive at edwardw@mvne.co.za within seconds
+
+**Custom sending domain (recommended for production):** in Resend → **Domains** → Add `mvne.co.za`, add the DNS records, verify, then set `CONTACT_FROM_EMAIL="Travel eSIM <no-reply@mvne.co.za>"`. Emails from verified domains have dramatically better deliverability than `onboarding@resend.dev`.
 
 ## How to redeploy
 - **Automatic:** Every push to `main` triggers a production deploy. Every PR gets its own preview deploy.

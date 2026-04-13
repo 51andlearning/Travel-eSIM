@@ -1,4 +1,5 @@
 import { cta, footer } from "@/content/proposal";
+import ContactDialog from "@/components/contact-dialog";
 
 export default function Cta() {
   return (
@@ -24,24 +25,7 @@ export default function Cta() {
           {cta.subtitle}
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href={cta.primary.href}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0369A1] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#075985]"
-          >
-            {cta.primary.label}
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </a>
+          <ContactDialog label={cta.primary.label} />
           <a
             href={cta.secondary.href}
             className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"

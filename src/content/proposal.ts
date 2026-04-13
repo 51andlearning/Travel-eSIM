@@ -12,7 +12,7 @@ export const executiveSummary = {
   stats: [
     { value: "$4.4B", label: "Global travel eSIM market by 2030" },
     { value: "$18.07", label: "ARPU per 5GB bundle (ex VAT)" },
-    { value: "$8.55M", label: "5-year revenue upside (best case)" },
+    { value: "Unlimited revenue potential", label: "5-year revenue upside" },
     { value: "12%", label: "Peak attach rate by Yr 5" },
   ],
   touchpoints: {
