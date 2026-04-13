@@ -6,6 +6,7 @@ const ARPU = 18.07; // $ per 5GB bundle (ex VAT)
 const AIRLINE_SHARE = 0.08; // 8% of subscriber revenue
 
 function formatUSD(n: number) {
+  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(2)}B`;
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(2)}M`;
   if (n >= 1_000) return `$${(n / 1_000).toFixed(1)}k`;
   return `$${n.toFixed(0)}`;
@@ -67,15 +68,15 @@ export default function Calculator() {
                 id="passengers"
                 type="range"
                 min={100_000}
-                max={5_000_000}
-                step={50_000}
+                max={100_000_000}
+                step={100_000}
                 value={passengers}
                 onChange={(e) => setPassengers(Number(e.target.value))}
                 className="mt-3 w-full accent-[#0369A1]"
               />
               <div className="mt-1 flex justify-between text-xs text-slate-500 tabular-nums">
                 <span>100k</span>
-                <span>5M</span>
+                <span>100M</span>
               </div>
               <input
                 type="number"
