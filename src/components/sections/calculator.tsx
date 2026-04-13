@@ -163,7 +163,7 @@ export default function Calculator() {
               </div>
               <div className="rounded-2xl bg-[#0369A1] p-8 text-white">
                 <div className="text-xs font-medium uppercase tracking-[0.2em] text-white/75">
-                  Airline net revenue
+                  Airline net annual revenue
                 </div>
                 <div className="mt-3 text-4xl font-semibold tracking-tight tabular-nums md:text-5xl">
                   {formatUSD(airlineNet)}
