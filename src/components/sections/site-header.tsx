@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const NAV = [
   { label: "Executive Summary", href: "#executive-summary" },
   { label: "Proposition", href: "#proposition" },
@@ -11,13 +13,27 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
-        <a href="/" className="flex items-center gap-2 text-[#0F172A]">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-[#0369A1] text-xs font-semibold text-white">
-            M
-          </span>
-          <span className="text-sm font-semibold tracking-tight">
-            MVNE · Travel eSIM
-          </span>
+        <a href="/" className="flex items-center gap-3 text-[#0F172A]">
+          <Image
+            src="/images/mvne-logo.svg"
+            alt="MVNE"
+            width={110}
+            height={32}
+            priority
+            className="h-8 w-auto"
+          />
+          <span
+            aria-hidden
+            className="hidden h-8 w-px bg-slate-200 sm:block"
+          />
+          <Image
+            src="/images/dsg-proud-member.svg"
+            alt="Proud member of DSG"
+            width={110}
+            height={32}
+            priority
+            className="hidden h-8 w-auto sm:block"
+          />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
