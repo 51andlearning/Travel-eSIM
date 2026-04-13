@@ -38,8 +38,19 @@ Manage via **Vercel → Project → Settings → Environment Variables**. Never 
 |----------|-------|---------|
 | `NEXT_PUBLIC_GA_ID` | Production, Preview | GA4 Measurement ID (optional) |
 | `NEXT_PUBLIC_SITE_URL` | Production, Preview | Canonical site URL |
+| `SITE_USERNAME` | Production, Preview | Basic-auth username (default: `travel`) |
+| `SITE_PASSWORD` | Production, Preview | Basic-auth password — **site is open if unset** |
 
 Add more as features land. Mirror them in a local `.env.local` (gitignored) for development.
+
+## Password protection
+The site ships with HTTP Basic Auth via `src/middleware.ts`. To lock it:
+1. Vercel → Project → Settings → Environment Variables
+2. Add `SITE_PASSWORD` (and optionally `SITE_USERNAME`) for Production + Preview
+3. Redeploy (or wait for next push) — browser will prompt for credentials on every visit
+4. To remove protection, delete `SITE_PASSWORD` and redeploy
+
+For team-scale access control (SSO, audit logs) consider Vercel's built-in Deployment Protection on the Pro plan instead.
 
 ## How to redeploy
 - **Automatic:** Every push to `main` triggers a production deploy. Every PR gets its own preview deploy.
