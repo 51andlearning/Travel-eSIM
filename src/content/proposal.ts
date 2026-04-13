@@ -99,7 +99,6 @@ export const businessCase = {
   title: "Business Case",
   parameters: [
     { label: "Bundle", value: "5 GB · $18.07 ARPU (ex VAT)" },
-    { label: "Margin", value: "30% gross margin on subscriber revenue" },
     { label: "Airline share", value: "10% of revenue to airline" },
     { label: "Target market", value: "1.0M pax in 2026 · +5% p.a." },
   ],

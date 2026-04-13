@@ -72,7 +72,7 @@ export default function BusinessCase() {
           Model parameters and passenger-attach scenarios used in the financial projections.
         </p>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-4">
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
           {businessCase.parameters.map((p) => (
             <div
               key={p.label}
