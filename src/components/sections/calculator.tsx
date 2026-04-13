@@ -130,7 +130,7 @@ export default function Calculator() {
               <div className="font-medium text-slate-700">Assumptions (fixed):</div>
               <ul className="mt-2 space-y-1">
                 <li>• ARPU per 5 GB bundle: <span className="tabular-nums text-slate-700">${ARPU.toFixed(2)}</span> (ex VAT)</li>
-                <li>• Airline revenue share: <span className="tabular-nums text-slate-700">{(AIRLINE_SHARE * 100).toFixed(0)}%</span></li>
+                <li>• Airline revenue share: <span className="tabular-nums text-slate-700">from {(AIRLINE_SHARE * 100).toFixed(0)}%</span></li>
               </ul>
             </div>
           </div>
