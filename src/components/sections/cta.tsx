@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cta, footer } from "@/content/proposal";
 import ContactDialog from "@/components/contact-dialog";
 
@@ -24,13 +25,40 @@ export default function Cta() {
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
           {cta.subtitle}
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <ContactDialog label={cta.primary.label} />
+        <div className="mt-10 flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap gap-3">
+            <ContactDialog label={cta.primary.label} />
+            <a
+              href={cta.secondary.href}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              {cta.secondary.label}
+            </a>
+          </div>
           <a
-            href={cta.secondary.href}
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+            href="https://dsg-travel-esim.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open this site on another device — QR code"
+            className="group flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.04] p-3 pr-4 transition hover:border-white/30 hover:bg-white/[0.08]"
           >
-            {cta.secondary.label}
+            <span className="inline-flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
+              <Image
+                src="/images/qr-site.svg"
+                alt="QR code linking to dsg-travel-esim.vercel.app"
+                width={72}
+                height={72}
+                className="h-full w-full"
+              />
+            </span>
+            <span className="text-left">
+              <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[#38bdf8]">
+                Scan to share
+              </span>
+              <span className="mt-1 block text-sm font-medium text-white">
+                Open this proposal on another device
+              </span>
+            </span>
           </a>
         </div>
 

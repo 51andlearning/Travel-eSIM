@@ -20,7 +20,7 @@ export default function ExecutiveSummary() {
       {/* Brand colour glow */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.45] [background-image:radial-gradient(circle_at_15%_20%,#38bdf8_0,transparent_45%),radial-gradient(circle_at_85%_80%,#0369A1_0,transparent_45%)]"
+        className="absolute inset-0 opacity-[0.7] [background-image:radial-gradient(circle_at_15%_20%,#38bdf8_0,transparent_45%),radial-gradient(circle_at_85%_80%,#0369A1_0,transparent_45%)]"
       />
       <div className="relative mx-auto max-w-6xl px-6 md:px-10">
         <div className="flex items-center gap-2">
