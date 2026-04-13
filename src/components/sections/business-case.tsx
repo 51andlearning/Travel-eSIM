@@ -90,10 +90,25 @@ export default function BusinessCase() {
 
         <div className="mt-14">
           <Tabs defaultValue="attach">
-            <TabsList className="bg-white">
-              <TabsTrigger value="attach">Attach Rate</TabsTrigger>
-              <TabsTrigger value="uptake">Passenger Uptake</TabsTrigger>
-              <TabsTrigger value="airline">Airline Revenue</TabsTrigger>
+            <TabsList className="h-auto w-full gap-2 rounded-xl border border-slate-200 bg-white p-1.5 sm:w-auto sm:inline-flex">
+              <TabsTrigger
+                value="attach"
+                className="rounded-lg px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 data-active:bg-[#0369A1] data-active:text-white data-active:shadow-[0_6px_16px_-8px_rgba(3,105,161,0.6)]"
+              >
+                Attach Rate
+              </TabsTrigger>
+              <TabsTrigger
+                value="uptake"
+                className="rounded-lg px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 data-active:bg-[#0369A1] data-active:text-white data-active:shadow-[0_6px_16px_-8px_rgba(3,105,161,0.6)]"
+              >
+                Passenger Uptake
+              </TabsTrigger>
+              <TabsTrigger
+                value="airline"
+                className="rounded-lg px-5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 data-active:bg-[#0369A1] data-active:text-white data-active:shadow-[0_6px_16px_-8px_rgba(3,105,161,0.6)]"
+              >
+                Airline Revenue
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="attach" className="mt-6">
               <Table
