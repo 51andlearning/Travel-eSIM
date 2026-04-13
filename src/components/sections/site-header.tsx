@@ -3,7 +3,6 @@ import Image from "next/image";
 const NAV = [
   { label: "Executive Summary", href: "#executive-summary" },
   { label: "Proposition", href: "#proposition" },
-  { label: "Business Case", href: "#business-case" },
   { label: "Calculator", href: "#calculator" },
   { label: "Next Steps", href: "#next-steps" },
 ];
