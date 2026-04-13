@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactDialog from "@/components/contact-dialog";
 
 const NAV = [
   { label: "Executive Summary", href: "#executive-summary" },
@@ -51,12 +52,13 @@ export default function SiteHeader() {
             );
           })}
         </nav>
-        <a
-          href="#next-steps"
-          className="hidden rounded-full bg-[#0369A1] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#075985] md:inline-flex"
-        >
-          Get in touch
-        </a>
+        <div className="hidden md:inline-flex">
+          <ContactDialog
+            label="Get in touch"
+            showIcon={false}
+            className="rounded-full bg-[#0369A1] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#075985]"
+          />
+        </div>
       </div>
     </header>
   );

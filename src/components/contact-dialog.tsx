@@ -29,7 +29,15 @@ const EMPTY: Fields = {
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
-export default function ContactDialog({ label }: { label: string }) {
+export default function ContactDialog({
+  label,
+  className,
+  showIcon = true,
+}: {
+  label: string;
+  className?: string;
+  showIcon?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [fields, setFields] = useState<Fields>(EMPTY);
   const [status, setStatus] = useState<Status>("idle");
@@ -81,21 +89,26 @@ export default function ContactDialog({ label }: { label: string }) {
         render={
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0369A1] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#075985]"
+            className={
+              className ??
+              "inline-flex items-center gap-2 rounded-full bg-[#0369A1] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#075985]"
+            }
           >
             {label}
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+            {showIcon ? (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            ) : null}
           </button>
         }
       />
