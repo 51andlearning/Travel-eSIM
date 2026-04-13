@@ -6,9 +6,21 @@ export default function ExecutiveSummary() {
       id="executive-summary"
       className="relative overflow-hidden bg-[#0F172A] py-24 text-white md:py-32"
     >
+      {/* Background image: aircraft taking off */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle_at_20%_20%,#38bdf8_0,transparent_45%),radial-gradient(circle_at_80%_80%,#0369A1_0,transparent_45%)]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        style={{ backgroundImage: "url(/images/hero-aircraft.jpg)" }}
+      />
+      {/* Dark navy gradient overlay for legibility */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/70 via-[#0F172A]/85 to-[#0F172A]"
+      />
+      {/* Brand colour glow */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.18] [background-image:radial-gradient(circle_at_15%_20%,#38bdf8_0,transparent_45%),radial-gradient(circle_at_85%_80%,#0369A1_0,transparent_45%)]"
       />
       <div className="relative mx-auto max-w-6xl px-6 md:px-10">
         <div className="flex items-center gap-2">
