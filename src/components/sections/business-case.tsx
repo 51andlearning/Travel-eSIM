@@ -93,6 +93,7 @@ export default function BusinessCase() {
             <TabsList className="bg-white">
               <TabsTrigger value="attach">Attach Rate</TabsTrigger>
               <TabsTrigger value="uptake">Passenger Uptake</TabsTrigger>
+              <TabsTrigger value="airline">Airline Revenue</TabsTrigger>
             </TabsList>
             <TabsContent value="attach" className="mt-6">
               <Table
@@ -104,6 +105,12 @@ export default function BusinessCase() {
               <Table
                 headers={businessCase.uptake.headers}
                 rows={businessCase.uptake.rows}
+              />
+            </TabsContent>
+            <TabsContent value="airline" className="mt-6">
+              <Table
+                headers={businessCase.airlineRevenue.headers}
+                rows={businessCase.airlineRevenue.rows}
               />
             </TabsContent>
           </Tabs>
