@@ -129,7 +129,7 @@ export const financials = {
   title: "Financial Projections",
   headline: {
     revenue: "Up to $8.55M subscriber revenue over 5 years",
-    net: "Up to $1.71M MVNE net over 5 years",
+    net: "Up to $1.71M Airline net over 5 years",
   },
   revenue: {
     headers: ["Year", "Worst ($M)", "Base ($M)", "Best ($M)"],
