@@ -36,15 +36,22 @@ export default function SiteHeader() {
           />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-sm text-slate-600 transition hover:text-[#0369A1]"
-            >
-              {n.label}
-            </a>
-          ))}
+          {NAV.map((n) => {
+            const isCalculator = n.href === "#calculator";
+            return (
+              <a
+                key={n.href}
+                href={n.href}
+                className={
+                  isCalculator
+                    ? "text-sm font-medium text-[#cd2026] transition hover:text-[#a8181d]"
+                    : "text-sm text-slate-600 transition hover:text-[#0369A1]"
+                }
+              >
+                {n.label}
+              </a>
+            );
+          })}
         </nav>
         <a
           href="#next-steps"
