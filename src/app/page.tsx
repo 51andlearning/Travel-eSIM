@@ -3,7 +3,6 @@ import Proposition from "@/components/sections/proposition";
 import WhatIsEsim from "@/components/sections/what-is-esim";
 import WhyEsim from "@/components/sections/why-esim";
 import BusinessCase from "@/components/sections/business-case";
-import Financials from "@/components/sections/financials";
 import Calculator from "@/components/sections/calculator";
 import OtherOpportunities from "@/components/sections/other-opportunities";
 import Cta from "@/components/sections/cta";
@@ -19,7 +18,6 @@ export default function Home() {
         <WhatIsEsim />
         <WhyEsim />
         <BusinessCase />
-        <Financials />
         <Calculator />
         <OtherOpportunities />
         <Cta />
