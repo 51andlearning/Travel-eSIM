@@ -181,7 +181,7 @@ export const otherOpportunities = {
     {
       title: "McAfee",
       body: "Connected security and identity protection — bundled with the eSIM or sold standalone.",
-      href: "https://www.digitalresiliance.co.za",
+      href: "https://www.digitalresilience.co.za",
     },
     {
       title: "Xanite",
