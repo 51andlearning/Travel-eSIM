@@ -43,15 +43,15 @@ export async function proxy(req: NextRequest) {
     const pin = String(form.get("pin") || "").trim().toLowerCase();
     if (equal(pin, process.env.SITE_PIN.trim().toLowerCase())) {
       return new NextResponse(null, { status: 303, headers: {
-        Location: "/",
+        Location: new URL("/", req.url).toString(), // NextResponse needs an absolute URL
         "Set-Cookie": `${COOKIE}=${expected}; Path=/; Max-Age=${MAX_AGE}; HttpOnly; Secure; SameSite=Lax`
       } });
     }
     await new Promise(r => setTimeout(r, 800)); // slow down guessing
-    return new NextResponse(null, { status: 303, headers: { Location: "/gate?e=1" } });
+    return new NextResponse(null, { status: 303, headers: { Location: new URL("/gate?e=1", req.url).toString() } });
   }
 
   const cookie = req.cookies.get(COOKIE)?.value;
   if (cookie && equal(cookie, expected)) return NextResponse.next();
-  return new NextResponse(null, { status: 302, headers: { Location: "/gate", "Cache-Control": "no-store" } });
+  return new NextResponse(null, { status: 302, headers: { Location: new URL("/gate", req.url).toString(), "Cache-Control": "no-store" } });
 }
